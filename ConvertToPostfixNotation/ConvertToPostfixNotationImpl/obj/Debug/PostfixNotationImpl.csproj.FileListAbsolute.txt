@@ -1,0 +1,5 @@
+C:\Users\Павел\Documents\Учеба\ЯПиМТ\Семестровка №2\ConvertToPostfixNotation\ConvertToPostfixNotationImpl\bin\Debug\PostfixNotationImpl.dll
+C:\Users\Павел\Documents\Учеба\ЯПиМТ\Семестровка №2\ConvertToPostfixNotation\ConvertToPostfixNotationImpl\bin\Debug\PostfixNotationImpl.pdb
+C:\Users\Павел\Documents\Учеба\ЯПиМТ\Семестровка №2\ConvertToPostfixNotation\ConvertToPostfixNotationImpl\obj\Debug\PostfixNotationImpl.csprojResolveAssemblyReference.cache
+C:\Users\Павел\Documents\Учеба\ЯПиМТ\Семестровка №2\ConvertToPostfixNotation\ConvertToPostfixNotationImpl\obj\Debug\PostfixNotationImpl.dll
+C:\Users\Павел\Documents\Учеба\ЯПиМТ\Семестровка №2\ConvertToPostfixNotation\ConvertToPostfixNotationImpl\obj\Debug\PostfixNotationImpl.pdb
