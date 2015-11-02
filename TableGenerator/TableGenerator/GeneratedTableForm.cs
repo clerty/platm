@@ -15,6 +15,14 @@ namespace TableGenerator
         public GeneratedTableForm()
         {
             InitializeComponent();
+            cFieldsInfo.Info.ListChanged += new ListChangedEventHandler(OnChange);
+        }
+
+        public void OnChange(object sender, ListChangedEventArgs e)
+        {
+                GeneratedTable.Columns.Clear();
+            List<DataGridViewTextBoxColumn> d = new List<DataGridViewTextBoxColumn>(cFieldsInfo.Info);
+            GeneratedTable.Columns.AddRange(d.ToArray());
         }
     }
 }

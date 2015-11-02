@@ -34,6 +34,7 @@
             // 
             // GeneratedTable
             // 
+            this.GeneratedTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.GeneratedTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GeneratedTable.Location = new System.Drawing.Point(12, 12);
             this.GeneratedTable.Name = "GeneratedTable";

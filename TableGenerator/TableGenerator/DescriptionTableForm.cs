@@ -16,23 +16,25 @@ namespace TableGenerator
         {
             InitializeComponent();
             //GeneratedTableFieldsSource s = new GeneratedTableFieldsSource();
-            this.descriptionTable.AutoGenerateColumns = false;
-            BindingList<FieldInfo> s = new BindingList<FieldInfo>();
+            this.DescriptionTable.AutoGenerateColumns = false;
 
-            /*FieldInfo f = new FieldInfo();
+            /*DataGridViewTextBoxColumn f = new DataGridViewTextBoxColumn();
             f.Name = "f";
-            f.Caption = "ф";
-            f.Type = 'c';
-            f.Length = 2;
-            f.Decimals = 0;
-            s.Add(f);*/
+            f.HeaderText = "ф";
+            //f.Type = 'c';
+            f.MaxInputLength = 2;
+            //f.Decimals = 0;
+            FieldInfo.s.Add(f);*/
 
-            descriptionTable.DataSource = s;
+            DescriptionTable.DataSource = cFieldsInfo.Info;
             FIELD_NAME.DataPropertyName = "Name";
-            FIELD_CAP.DataPropertyName = "Caption";
-            FIELD_TYPE.DataPropertyName = "Type";
-            FIELD_LEN.DataPropertyName = "Length";
-            FIELD_DEC.DataPropertyName = "Decimals";
+            FIELD_CAP.DataPropertyName = "HeaderText";
+            FIELD_TYPE.DataPropertyName = "DefaultCellStyle.Format";
+            FIELD_LEN.DataPropertyName = "MaxInputLength";
+            //FIELD_DEC.DataPropertyName = "DefaultCellStyle.Format";
+
+            GeneratedTableForm form = new GeneratedTableForm();
+            form.Show();
 
             //descriptionTable.DataBindings.Add()
         }

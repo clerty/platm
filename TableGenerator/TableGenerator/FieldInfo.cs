@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace TableGenerator
 {
-    public class FieldInfo
+    public static class cFieldsInfo
     {
-        public string Name { get; set; }
-        public string Caption { get; set; }
-        public char Type { get; set; }
-        public int Length { get; set; }
-        public int Decimals { get; set; }     
+        public static BindingList<DataGridViewTextBoxColumn> Info = new BindingList<DataGridViewTextBoxColumn>();
+        //public static BindingList<DataGridViewCellStyle> StyleInfo = new BindingList<DataGridViewCellStyle>();
     }
 }
