@@ -83,7 +83,7 @@
             // FIELD_TYPE
             // 
             this.FIELD_TYPE.HeaderText = "Тип поля";
-            this.FIELD_TYPE.MaxInputLength = 2;
+            this.FIELD_TYPE.MaxInputLength = 1;
             this.FIELD_TYPE.Name = "FIELD_TYPE";
             this.FIELD_TYPE.Width = 72;
             // 
