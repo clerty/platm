@@ -58,36 +58,38 @@
             this.FIELD_TYPE,
             this.FIELD_LEN,
             this.FIELD_DEC});
-            this.DescriptionTable.Location = new System.Drawing.Point(12, 12);
+            this.DescriptionTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DescriptionTable.Location = new System.Drawing.Point(0, 0);
             this.DescriptionTable.Name = "DescriptionTable";
-            this.DescriptionTable.Size = new System.Drawing.Size(627, 150);
+            this.DescriptionTable.Size = new System.Drawing.Size(598, 161);
             this.DescriptionTable.TabIndex = 0;
+            this.DescriptionTable.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DescriptionTable_CellFormatting);
+            this.DescriptionTable.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DescriptionTable_CellValueChanged);
             // 
             // FIELD_NAME
             // 
             this.FIELD_NAME.HeaderText = "Имя поля";
             this.FIELD_NAME.MaxInputLength = 10;
             this.FIELD_NAME.Name = "FIELD_NAME";
-            this.FIELD_NAME.Width = 75;
+            this.FIELD_NAME.Width = 81;
             // 
             // FIELD_CAP
             // 
             this.FIELD_CAP.HeaderText = "Русифицированное имя";
-            this.FIELD_CAP.MaxInputLength = 30;
+            this.FIELD_CAP.MaxInputLength = 50;
             this.FIELD_CAP.Name = "FIELD_CAP";
             this.FIELD_CAP.Width = 140;
             // 
             // FIELD_TYPE
             // 
             this.FIELD_TYPE.HeaderText = "Тип поля";
-            this.FIELD_TYPE.MaxInputLength = 1;
+            this.FIELD_TYPE.MaxInputLength = 2;
             this.FIELD_TYPE.Name = "FIELD_TYPE";
             this.FIELD_TYPE.Width = 72;
             // 
             // FIELD_LEN
             // 
             dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = "0";
             this.FIELD_LEN.DefaultCellStyle = dataGridViewCellStyle2;
             this.FIELD_LEN.HeaderText = "Длина поля";
             this.FIELD_LEN.MaxInputLength = 3;
@@ -97,7 +99,6 @@
             // FIELD_DEC
             // 
             dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
             this.FIELD_DEC.DefaultCellStyle = dataGridViewCellStyle3;
             this.FIELD_DEC.HeaderText = "Количество цифр после запятой для типа N";
             this.FIELD_DEC.MaxInputLength = 3;
@@ -108,10 +109,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(651, 261);
+            this.ClientSize = new System.Drawing.Size(598, 161);
             this.Controls.Add(this.DescriptionTable);
             this.Name = "DescriptionTableForm";
-            this.Text = "Form1";
+            this.Text = "Таблица описания";
             ((System.ComponentModel.ISupportInitialize)(this.DescriptionTable)).EndInit();
             this.ResumeLayout(false);
 

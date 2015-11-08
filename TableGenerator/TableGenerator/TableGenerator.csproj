@@ -50,9 +50,7 @@
     <Compile Include="DescriptionTableForm.Designer.cs">
       <DependentUpon>DescriptionTableForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FieldInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="FieldsInfoList.cs" />
     <Compile Include="GeneratedTableForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +76,9 @@
     </Compile>
     <None Include="Properties\DataSources\DescriptionTableForm.datasource" />
     <None Include="Properties\DataSources\FieldInfo.datasource" />
+    <None Include="Properties\DataSources\FieldsBasicInfoList.datasource" />
+    <None Include="Properties\DataSources\FieldsInfoList.datasource" />
+    <None Include="Properties\DataSources\FieldsStyleInfoList.datasource" />
     <None Include="Properties\DataSources\GeneratedTableFieldsSource.datasource" />
     <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\Settings.settings">

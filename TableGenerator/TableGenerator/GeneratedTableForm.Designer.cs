@@ -36,19 +36,21 @@
             // 
             this.GeneratedTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.GeneratedTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GeneratedTable.Location = new System.Drawing.Point(12, 12);
+            this.GeneratedTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GeneratedTable.Location = new System.Drawing.Point(0, 0);
             this.GeneratedTable.Name = "GeneratedTable";
-            this.GeneratedTable.Size = new System.Drawing.Size(553, 150);
+            this.GeneratedTable.Size = new System.Drawing.Size(577, 161);
             this.GeneratedTable.TabIndex = 0;
+            this.GeneratedTable.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GeneratedTable_CellFormatting);
             // 
             // GeneratedTableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 261);
+            this.ClientSize = new System.Drawing.Size(577, 161);
             this.Controls.Add(this.GeneratedTable);
             this.Name = "GeneratedTableForm";
-            this.Text = "GeneratedTableForm";
+            this.Text = "Генерируемая таблица";
             ((System.ComponentModel.ISupportInitialize)(this.GeneratedTable)).EndInit();
             this.ResumeLayout(false);
 
