@@ -12,14 +12,14 @@ namespace TableGenerator
 {
     public partial class GeneratedTableForm : Form
     {
-        FieldsInfoList FieldsInfoBindingList = new FieldsInfoList();
-        public GeneratedTableForm(FieldsInfoList FieldsInfoBindingList)
+        FieldsInfoList FieldsInfoList = new FieldsInfoList();
+        public GeneratedTableForm(FieldsInfoList FieldsInfoList)
         {
             InitializeComponent();
-            this.FieldsInfoBindingList = FieldsInfoBindingList;
-            List<DataGridViewTextBoxColumn> fieldsInfoList = new List<DataGridViewTextBoxColumn>(this.FieldsInfoBindingList);
+            this.FieldsInfoList = FieldsInfoList;
+            List<DataGridViewTextBoxColumn> fieldsInfoList = new List<DataGridViewTextBoxColumn>(this.FieldsInfoList);
             GeneratedTable.Columns.AddRange(fieldsInfoList.ToArray());
-            this.FieldsInfoBindingList.ListChanged += new ListChangedEventHandler(OnFieldsInfoListChange);
+            this.FieldsInfoList.ListChanged += new ListChangedEventHandler(OnFieldsInfoListChange);
 
             GeneratedTable.Rows.Add();
             GeneratedTable.Rows[0].Cells[0].Value = DateTime.Now;
@@ -28,7 +28,7 @@ namespace TableGenerator
         public void OnFieldsInfoListChange(object sender, ListChangedEventArgs e)
         {
                 GeneratedTable.Columns.Clear();
-                List<DataGridViewTextBoxColumn> fieldsInfoList = new List<DataGridViewTextBoxColumn>(this.FieldsInfoBindingList);
+                List<DataGridViewTextBoxColumn> fieldsInfoList = new List<DataGridViewTextBoxColumn>(this.FieldsInfoList);
                 GeneratedTable.Columns.AddRange(fieldsInfoList.ToArray());
         }
 
