@@ -8,16 +8,12 @@ namespace PostfixNotationImpl
 {
     public class InfToPostfConverter
     {
-        public InfToPostfConverter()
+        private static List<string> operators =
+            new List<string>(new string[] { "(", ")", "+", "-", "*", "/" });
+        public static List<string> GetOperators()
         {
-            operators = new List<string>(standartOperators);
-            operators.Add("sin");
-            operators.Add("F");
-            
+            return operators;
         }
-        private List<string> operators;
-        private List<string> standartOperators =
-            new List<string>(new string[] { "(", ")", "+", "-", "*", "/"});
         private List<string> Split(string inp)
         {
             List<string> splittedInputExpression = new List<string>();
@@ -51,13 +47,11 @@ namespace PostfixNotationImpl
                 case "*":
                 case "/":
                     return 2;
-                case "^":
-                    return 3;
                 default:
-                    return 4;
+                    return 3;
             }
         }
-        public string ConvertToPostfixNotation(string input)
+        public Queue<string> ConvertToPostfixNotation(string input)
         {
             Queue<string> splittedOutputExpression = new Queue<string>();
             Stack<string> stack = new Stack<string>();
@@ -67,24 +61,25 @@ namespace PostfixNotationImpl
                     splittedOutputExpression.Enqueue(c);
                 else
                 {
-                    if (c == ",")
+                    switch (c)
                     {
-                        while (stack.Count > 0 && stack.Peek() != "(")
-                            splittedOutputExpression.Enqueue(stack.Pop());
-                    }
-                    else if (c == "(")
-                        stack.Push(c);
-                    else if (c == ")")
-                    {
-                        while (stack.Count > 0 && stack.Peek() != "(")
-                            splittedOutputExpression.Enqueue(stack.Pop());
-                        stack.Pop();
-                    }
-                    else
-                    {
-                        while (stack.Count > 0 && GetPriority(c) <= GetPriority(stack.Peek()))
-                            splittedOutputExpression.Enqueue(stack.Pop());
-                        stack.Push(c);
+                        case ",":
+                            while (stack.Count > 0 && stack.Peek() != "(")
+                                splittedOutputExpression.Enqueue(stack.Pop());
+                            break;
+                        case "(":
+                            stack.Push(c);
+                            break;
+                        case ")":
+                            while (stack.Count > 0 && stack.Peek() != "(")
+                                splittedOutputExpression.Enqueue(stack.Pop());
+                            stack.Pop();
+                            break;
+                        default:
+                            while (stack.Count > 0 && GetPriority(c) <= GetPriority(stack.Peek()))
+                                splittedOutputExpression.Enqueue(stack.Pop());
+                            stack.Push(c);
+                            break;
                     }
                 }
             }
@@ -95,7 +90,7 @@ namespace PostfixNotationImpl
                     splittedOutputExpression.Enqueue(c);
                 }
             }
-            return String.Join(" ", splittedOutputExpression);
+            return splittedOutputExpression;
         }
     }
 }
